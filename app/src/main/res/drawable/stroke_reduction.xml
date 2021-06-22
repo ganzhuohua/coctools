@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--线条
+    width 线条粗细
+
+    dashWidth 虚线
+    dashGap 虚线密集度
+    -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/players_max"
+        android:dashWidth="0dp"
+        android:dashGap="3dp" />
+</shape>

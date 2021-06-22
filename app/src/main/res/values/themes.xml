@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.COC桌面挂件" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <!--标题栏颜色-->
+        <item name="colorPrimary">@color/hs</item>
+        <!--状态栏颜色-->
+        <item name="colorPrimaryVariant">@color/bg</item>
+        <!--标题栏字体颜色-->
+        <item name="colorOnPrimary">@color/black</item>
+        <!--编辑框底线颜色-->
+        <item name="colorAccent">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="ThemeOverlay.COC桌面挂件.AppWidgetContainer" parent="">
+        <item name="appWidgetBackgroundColor">@color/light_blue_600</item>
+        <item name="appWidgetTextColor">@color/light_blue_50</item>
+    </style>
+
+    <style name="NoTitleBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/light_blue_600</item>
+        <item name="colorPrimaryVariant">@color/orange</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimaryDark">#512DA8</item>
+    </style>
+
+</resources>

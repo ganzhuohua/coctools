@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ssyj.coc">
+
+    <!-- 访问网络限权 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- 日志 -->
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" /> <!-- QQ -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_coc"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_coc"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.COC桌面挂件"
+        android:usesCleartextTraffic="true">
+        <receiver
+            android:name=".ClanAppWidget"
+            android:label="部落信息">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clan_app_widget_info" />
+        </receiver>
+
+        <activity android:name=".Qq" />
+        <activity android:name=".CocAnalysis" />
+        <activity android:name=".CocHelp" />
+        <activity android:name=".CocAbout" />
+        <activity android:name=".CardSetTag" />
+
+        <receiver
+            android:name=".FishAppWidget"
+            android:label="coc鱼情">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.ssyj.coc.loading.fish.onclick" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/fish_app_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".CocAppWidget"
+            android:label="coc个人信息">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/coc_app_widget_info" />
+        </receiver>
+
+
+        <service
+            android:name=".CocService"
+            android:label="CocService" />
+
+        <service
+            android:name=".ClansWidgetService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS"></service>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- QQ配置信息 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="101951640" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
+
+</manifest>
